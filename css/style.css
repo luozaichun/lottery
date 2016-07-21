@@ -1,0 +1,40 @@
+.container{
+    margin: 100px auto;
+    width: 746px;
+}
+.mod-slot-machine{
+    position: relative;
+}
+.mod-slot-machine .slot-common{
+    position: absolute;
+    overflow: hidden;
+    width: 746px;
+    height: 234px;
+}
+.mod-slot-machine .slot-common .slot-line{
+    position: absolute;
+    width: 245px;
+}
+.mod-slot-machine .slot-common .slot-1{
+    left: 0;
+}
+.mod-slot-machine .slot-common .slot-2{
+    left: 251px;
+}
+.mod-slot-machine .slot-common .slot-3{
+    left: 501px;
+}
+.mod-slot-machine .slot-common .slot-line-inner{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+.mod-slot-machine .slot-common .slot-item{
+    list-style: none;
+    width: 245px;
+    height: 234px;
+}
+.mod-slot-machine .slot-opt{
+    position: absolute;
+    top: 270px;
+}

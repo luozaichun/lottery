@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+<div class="mod-slot-machine">
+	<div class="slot-common">
+		<div class="slot-line slot-1">
+			<ul class="slot-line-inner" data-index='1'>
+				<li class="slot-item" data-index="1">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/5s%E5%A4%A7.png">
+				</li>
+				<li class="slot-item" data-index="2">
+					<img class="slot-img" src="http://zhidao.baidu.com/topic/xiaomi223.png">
+				</li>
+				<li class="slot-item" data-index="3">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/saodi223.png">
+				</li>
+				<li class="slot-item" data-index="4">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/jimu223.png">
+				</li>
+				<li class="slot-item" data-index="5">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/dashu223.png">
+				</li>
+				<li class="slot-item" data-index="6">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/taili419.png">
+				</li>
+				<li class="slot-item" data-index="7">
+					<img class="slot-img" src="http://zhidao.baidu.com/topic/jianpan223.png">
+				</li>
+				<li class="slot-item" data-index="8">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/xibushujuda.png">
+				</li>
+			</ul>
+		</div>
+		<div class="slot-line slot-2">
+			<ul class="slot-line-inner" data-index='2'>
+				<li class="slot-item" data-index="1">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/5s%E5%A4%A7.png">
+				</li>
+				<li class="slot-item" data-index="2">
+					<img class="slot-img" src="http://zhidao.baidu.com/topic/xiaomi223.png">
+				</li>
+				<li class="slot-item" data-index="3">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/saodi223.png">
+				</li>
+				<li class="slot-item" data-index="4">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/jimu223.png">
+				</li>
+				<li class="slot-item" data-index="5">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/dashu223.png">
+				</li>
+				<li class="slot-item" data-index="6">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/taili419.png">
+				</li>
+				<li class="slot-item" data-index="7">
+					<img class="slot-img" src="http://zhidao.baidu.com/topic/jianpan223.png">
+				</li>
+				<li class="slot-item" data-index="8">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/xibushujuda.png">
+				</li>
+			</ul>
+		</div>
+		<div class="slot-line slot-3">
+			<ul class="slot-line-inner" data-index='3'>
+				<li class="slot-item" data-index="1">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/5s%E5%A4%A7.png">
+				</li>
+				<li class="slot-item" data-index="2">
+					<img class="slot-img" src="http://zhidao.baidu.com/topic/xiaomi223.png">
+				</li>
+				<li class="slot-item" data-index="3">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/saodi223.png">
+				</li>
+				<li class="slot-item" data-index="4">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/jimu223.png">
+				</li>
+				<li class="slot-item" data-index="5">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/dashu223.png">
+				</li>
+				<li class="slot-item" data-index="6">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/taili419.png">
+				</li>
+				<li class="slot-item" data-index="7">
+					<img class="slot-img" src="http://zhidao.baidu.com/topic/jianpan223.png">
+				</li>
+				<li class="slot-item" data-index="8">
+					<img class="slot-img" src="http://img.baidu.com/img/iknow/xibushujuda.png">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="slot-opt">
+		<a id="j-slot-start" href="javascript:">开始</a>
+	</div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.7.2-min.js"></script>
+<script type="text/javascript" src="js/slotMachine.js"></script>
+<script type="text/javascript">
+
+	var isBegin=false;
+	$('#j-slot-start').on('click',function () {
+		if(isBegin) return;
+		isBegin=true;
+
+		$(".slot-line-inner").each(function(i,v){
+			
+			setTimeout(function(){
+				$(v).slotMachine({
+					v1:3, 
+					v2:300, 
+					target:i,
+					time:10*600,
+					last_time:100,
+					afterFn:function(){
+						if(i==2) isBegin = false;
+					}
+				});
+			}, i * 600);
+		});
+	})
+</script>
+</body>
+</html>
